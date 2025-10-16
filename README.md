@@ -1,0 +1,1 @@
+[![Runpod](https://api.runpod.io/badge/haomiao33/rmbg)](https://console.runpod.io/hub/haomiao33/rmbg)
