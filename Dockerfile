@@ -1,10 +1,15 @@
-FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
-RUN apt-get update && apt-get install -y git ffmpeg libsm6 libxext6 && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir runpod diffusers transformers accelerate safetensors pillow xformers torch torchvision requests
+FROM python:3.11.1-slim
 
-WORKDIR /app
-COPY app.py /app/app.py
+WORKDIR /
 
-CMD ["python", "-u", "app.py"]
+# Copy and install requirements
+COPY builder/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your handler code
+COPY src/handler.py .
+
+# Command to run when the container starts
+CMD ["python", "-u", "/handler.py"]
