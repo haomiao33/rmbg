@@ -3,7 +3,7 @@
     {
       "name": "background_removal_test",
       "input": {
-        "image_url": "https://raw.githubusercontent.com//haomiao33/rmbg/main/c.jpg"
+        "image_url": "https://raw.githubusercontent.com/haomiao33/rmbg/main/c.jpg" 
       },
       "timeout": 30000
     }
