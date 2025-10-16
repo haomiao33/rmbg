@@ -1,0 +1,61 @@
+{
+  "title": "Qwen Image Lightning Background Remover",
+  "description": "High-quality AI background removal powered by Qwen-Image-Lightning. Upload a product image and get a clean, white-background result instantly.",
+  "type": "serverless",
+  "category": "image",
+  "iconUrl": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/thumbnail.png",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 20,
+    "gpuCount": 1,
+    "presets": [
+      {
+        "name": "Default (T4 GPU)",
+        "defaults": {
+          "MODEL_NAME": "lightx2v/Qwen-Image-Lightning",
+          "DEVICE": "cuda",
+          "PRECISION": "bf16",
+          "PORT": "8080"
+        }
+      }
+    ],
+    "env": [
+      {
+        "key": "MODEL_NAME",
+        "input": {
+          "name": "Hugging Face Model ID",
+          "type": "string",
+          "description": "Hugging Face model repo to load (default: lightx2v/Qwen-Image-Lightning)",
+          "default": "lightx2v/Qwen-Image-Lightning"
+        }
+      },
+      {
+        "key": "DEVICE",
+        "input": {
+          "name": "Compute Device",
+          "type": "string",
+          "description": "Device for inference (cuda or cpu)",
+          "default": "cuda"
+        }
+      },
+      {
+        "key": "PRECISION",
+        "input": {
+          "name": "Precision",
+          "type": "string",
+          "description": "Floating point precision mode (fp16 or bf16)",
+          "default": "bf16"
+        }
+      },
+      {
+        "key": "PORT",
+        "input": {
+          "name": "API Port",
+          "type": "string",
+          "description": "Port exposed by the API server",
+          "default": "8080"
+        }
+      }
+    ]
+  }
+}
