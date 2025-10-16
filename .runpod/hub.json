@@ -1,9 +1,10 @@
 {
   "title": "Qwen Background Remover",
-  "description": "AI-powered background removal using Qwen-Image-Lightning",
+  "description": "Serverless image background remover using Qwen-Image-Lightning",
   "type": "serverless",
   "category": "image",
   "iconUrl": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/thumbnail.png",
+  "model": "Qwen/Qwen-Image",
   "config": {
     "runsOn": "GPU",
     "containerDiskInGb": 20,
@@ -12,20 +13,9 @@
       {
         "name": "T4 Default",
         "defaults": {
-          "MODEL_NAME": "lightx2v/Qwen-Image-Lightning",
-          "DEVICE": "cuda",
-          "PORT": "8080"
-        }
-      }
-    ],
-    "env": [
-      {
-        "key": "MODEL_NAME",
-        "input": {
-          "name": "HF Model ID",
-          "type": "string",
-          "description": "Hugging Face model repo",
-          "default": "lightx2v/Qwen-Image-Lightning"
+          "MODEL_PATH": "Qwen/Qwen-Image",
+          "LORA_PATH": "lightx2v/Qwen-Image-Lightning",
+          "LORA_WEIGHT": "Qwen-Image-Lightning-8steps-V1.0.safetensors"
         }
       }
     ]
