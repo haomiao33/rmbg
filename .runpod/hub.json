@@ -1,14 +1,14 @@
 {
   "title": "Qwen Background Remover",
-  "description": "Serverless image background remover using Qwen-Image-Lightning",
+  "description": "Serverless image background remover using Qwen-Image-Lightning LoRA",
   "type": "serverless",
   "category": "image",
   "iconUrl": "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/thumbnail.png",
   "model": "Qwen/Qwen-Image",
   "config": {
     "runsOn": "GPU",
-    "containerDiskInGb": 20,
     "gpuCount": 1,
+    "containerDiskInGb": 20,
     "presets": [
       {
         "name": "T4 Default",
