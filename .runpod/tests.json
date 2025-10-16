@@ -3,7 +3,7 @@
     {
       "name": "background_removal_test",
       "input": {
-        "file_url": "https://raw.githubusercontent.com/runpod/runpod-python/main/tests/sample-image.jpg"
+        "image_url": "https://raw.githubusercontent.com//haomiao33/rmbg/main/c.jpg"
       },
       "timeout": 30000
     }
@@ -18,14 +18,7 @@
       }
     ],
     "allowedCudaVersions": [
-      "12.7",
-      "12.6",
-      "12.5",
-      "12.4",
-      "12.3",
-      "12.2",
-      "12.1",
-      "12.0"
+      "12.7", "12.6","12.5","12.4","12.3","12.2","12.1","12.0"
     ]
   }
 }
