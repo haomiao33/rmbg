@@ -1,19 +1,9 @@
-
-
-FROM python:3.11.1-slim
+FROM python:3.10-slim
 
 WORKDIR /
+COPY requirements.txt /requirements.txt
+RUN pip install -r requirements.txt
+COPY rp_handler.py /
 
-# Copy and install requirements
-COPY builder/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy your code and model files
-COPY src/handler.py .
-COPY models/ /models/
-
-# Set environment variables if needed
-ENV MODEL_PATH=/models/my_model.pt
-
-# Command to run when the container starts
-CMD ["python", "-u", "/handler.py"]
+# Start the container
+CMD ["python3", "-u", "rp_handler.py"]
